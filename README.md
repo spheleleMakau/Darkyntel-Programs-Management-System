@@ -1,7 +1,11 @@
 # Darkyntel Management System (Work in Progress)
 
 ## Overview
-Welcome to the Darkyntel Management System (DMS) repository! This system is an ongoing project aimed at simplifying event management tasks for Darkyntel. Currently, the focus is on developing the dashboard and functionalities related to programs and participants.
+
+The Darkyntel Management System (DMS) is a comprehensive management tool developed using Python Tkinter for the frontend and Django for the backend. The system aims to streamline organizational processes and enhance efficiency for Darkyntel NPO: 
+Darkyntel is a STEAM grounded non-profit-organisation that aims to stimulate imaginations, creativity and
+innovation to prepare the youth for exceedingly demanding fourth industrial revolution.
+
 
 ## Features (Work in Progress)
 1. **User Authentication:**
@@ -10,36 +14,62 @@ Welcome to the Darkyntel Management System (DMS) repository! This system is an o
 
 2. **Dashboard:**
    - Upon successful login, users are directed to the dashboard.
-   - The dashboard provides an overview of relevant information.
-
-3. **Program Management:**
+   - A dynamic dashboard with real-time data display.
+  
+3. **Menu Navigation:**
+   -  User-friendly menus for easy navigation across different sections.
+     
+4. **Program Management:**
    - Users can access the "Program" section to manage program details.
    - Form fields include program name, duration, charges, and description.
    - Functionalities such as save, update, delete, clear, and search are being implemented.
 
-4. **Participant Management:**
+5. **Participant Management:**
    - The "Participant" section enables users to manage participant details, including names and IDs.
    - Additional participant-related functionalities are under development.
+
+6. **Partners:**
+   - Manage partnership details seamlessly.
+   
+7. **Results:**
+   - View and manage results effortlessly.
+  
+
+
+
 
 ## Setup (Work in Progress)
 Follow these steps to run the Darkyntel Management System on your local machine:
 
-1. Clone the repository:
+1. Ensure you have Python installed on your system.
+
+2. Clone the repository:
 
    ```bash
    git clone https://github.com/SpheleleMakau/Darkyntel-Management-System.git
    ```
 
-2. Navigate to the project directory:
+3. Navigate to the project directory:
 
    ```bash
    cd Darkyntel-Management-System
    ```
+4. Create and activate a virtual environment:
 
-3. Run the script:
+    ```bash
+    python -m venv venv
+    source venv/bin/activate   # On Linux/Mac
+    .\venv\Scripts\activate    # On Windows
+    ```
+
+5. Install required dependencies using :
+
+   `pip install -r requirements.txt`.
+
+7. Run the script:
 
    ```bash
-   python main.py
+   Run `python dashboard.py` to start the Darkyntel Management System.
    ```
 
 ## Dependencies
