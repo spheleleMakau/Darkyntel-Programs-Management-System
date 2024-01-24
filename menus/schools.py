@@ -8,7 +8,7 @@ class SchoolClass:
     def __init__(self, root):
         self.root = root
         self.root.title("Darkyntel Management System")
-        self.root.geometry("900x400+80+170")
+        self.root.geometry("1000x400+80+170")
         self.root.resizable(False, False)
         self.root.config(bg="white")
 
@@ -76,9 +76,44 @@ class SchoolClass:
         self.school_name_entry.place(x=620, y=60, width=180)
 
 
-        self.search_Name_Button=Button(self.root, text="Search", font=("goudy old style", 10),bg="#65c0b9").place(x=800, y=60, width=120, height=28)
+        self.search_Name_Button=Button(self.root, text="Search", font=("goudy old style", 10),bg="#65c0b9").place(x=850, y=60, width=120, height=28)
             
-   
+   #content
+        
+        self.school_frame= Frame(self.root,bd=2,relief=RIDGE)
+        self.school_frame.place(x=500,y=100,width=470,height=230)
+
+        scrollx = Scrollbar(self.school_frame,orient=HORIZONTAL)
+        scrollY = Scrollbar(self.school_frame,orient=VERTICAL)
+
+
+        self.schoolTable= ttk.Treeview(self.school_frame,columns=("sid","name","location","program","participants","description"),xscrollcommand=scrollx.set,yscrollcommand=scrollY.set)
+        self.schoolTable.pack(fill=BOTH,expand=1)
+
+        #table scrollers
+        scrollx.pack(side=BOTTOM,fill=X)
+        scrollY.pack(side=RIGHT,fill=Y)
+
+        scrollx.config(command=self.schoolTable.xview)
+        scrollY.config(command=self.schoolTable.yview)
+
+        #School Table headings
+        self.schoolTable.heading("sid",text="School ID")
+        self.schoolTable.heading("name",text="Name")
+        self.schoolTable.heading("location",text="Location")
+        self.schoolTable.heading("program",text="Program")
+        self.schoolTable.heading("participants",text="Participants")
+        self.schoolTable.heading("description",text="Description")
+        self.schoolTable["show"]="headings"
+
+        #School table columns
+        self.schoolTable.column("sid",width=100)
+        self.schoolTable.column("name",width=100)
+        self.schoolTable.column("location",width=100)
+        self.schoolTable.column("program",width=100)
+        self.schoolTable.column("participants",width=100)
+        self.schoolTable.column("description",width=150)
+
 
 if __name__ == "__main__":
     root = Tk()
